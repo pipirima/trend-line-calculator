@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  package:
+    image: webdevops/php-nginx-dev:7.2
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
