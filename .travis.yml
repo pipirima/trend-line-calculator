@@ -5,9 +5,9 @@ services:
 
 before_install:
   - docker-compose up -d
+  - ls -la
+  - docker-compose exec package ls -la
   - make build-env
 
 script:
-  - ls -la
-  - docker-compose exec package ls -la
   - make unit-test
