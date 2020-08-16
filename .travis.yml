@@ -8,4 +8,6 @@ before_install:
   - make build-env
 
 script:
+  - ls -la
+  - docker-compose exec package ls -la
   - make unit-test
