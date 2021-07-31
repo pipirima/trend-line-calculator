@@ -1,6 +1,6 @@
 <?php
 
-namespace Albireo\TrendLine;
+namespace Pipirima\TrendLine;
 
 class Calculator
 {

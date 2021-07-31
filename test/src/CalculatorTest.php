@@ -1,8 +1,8 @@
 <?php
 
-namespace Albireo\TrendLine\Test;
+namespace Pipirima\TrendLine\Test;
 
-use Albireo\TrendLine\Calculator;
+use Pipirima\TrendLine\Calculator;
 use PHPUnit\Framework\TestCase;
 
 class CalculatorTest extends TestCase
