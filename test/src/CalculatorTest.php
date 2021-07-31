@@ -12,4 +12,10 @@ class CalculatorTest extends TestCase
         $calculator = new Calculator();
         $this->assertEquals(10, $calculator->add(5, 5));
     }
+
+    public function testSub()
+    {
+        $calculator = new Calculator();
+        $this->assertEquals(1, $calculator->sub(5, 4));
+    }
 }
