@@ -87,7 +87,8 @@ class CalculatorTest extends TestCase
         $point5 = new Point(5, 10);
         $point6 = new Point(6, 12);
         $points = new PointsCollection();
-        $points->addPointsArray([$point1, $point2, $point3, $point4, $point5, $point6]);
+        $points->addPointsArray([$point1, $point2, $point3, $point4, $point5]);
+        $points->addPoint($point6);
         $calculator = new Calculator();
         $line = $calculator->calculateLine($points);
         $this->assertLessThan(0.0001, abs(2.0857 - $line->getA()));

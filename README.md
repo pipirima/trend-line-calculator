@@ -10,9 +10,9 @@ Calculation of trend line parameters for a given set of chart points.
         $point4 = new Point(4, 8);
         $point5 = new Point(5, 10);
         $point6 = new Point(6, 12);
-        $pointsArray = [$point1, $point2, $point3, $point4, $point5, $point6];
         $points = new PointsCollection();
-        $points->addPointsArray($pointsArray);
+        $points->addPointsArray([$point1, $point2, $point3, $point4, $point5]);
+        $points->addPoint($point6);
         $calculator = new Calculator();
         $line = $calculator->calculateLine($points);
         $this->assertLessThan(0.0001, abs(2.0857 - $line->getA()));
