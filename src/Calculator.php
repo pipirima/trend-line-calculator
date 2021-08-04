@@ -4,13 +4,9 @@ namespace Pipirima\TrendLine;
 
 class Calculator
 {
-    public function add(int $a, int $b): int
+    public function calculateLine(PointsCollection $points): Line
     {
-        return $a + $b;
-    }
-
-    public function sub(int $a, int $b): int
-    {
-        return $a - $b;
+        // TODO: Implement calculateLine() method.
+        return new Line(1, 0);
     }
 }

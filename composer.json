@@ -2,7 +2,7 @@
   "name": "pipirima/trend-line-calculator",
   "description": "Calculation of trend line parameters for a given set of chart points",
   "require": {
-    "php": ">=7.2"
+    "php": ">=7.4"
   },
   "autoload": {
     "psr-4": {
