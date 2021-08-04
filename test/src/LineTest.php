@@ -9,10 +9,13 @@ class LineTest extends TestCase
 {
     public function testAll()
     {
-        $line = new Line(13, 17);
-        $this->assertEquals(13, $line->getA());
-        $this->assertEquals(17, $line->getB());
+        $a = 13;
+        $b = 17;
+        $line = new Line($a, $b);
+        $this->assertEquals($a, $line->getA());
+        $this->assertEquals($b, $line->getB());
         $x = 8;
-        $this->assertEquals(13 * $x + 17, $line->getY($x));
+        $y = $a * $x + $b;
+        $this->assertEquals($y, $line->getY($x));
     }
 }
