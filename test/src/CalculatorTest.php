@@ -80,17 +80,36 @@ class CalculatorTest extends TestCase
 
     public function test7_general_example_found_in_internet()
     {
+        // create points
         $point1 = new Point(1, 2);
         $point2 = new Point(2, 3);
         $point3 = new Point(3, 6);
         $point4 = new Point(4, 8);
         $point5 = new Point(5, 10);
         $point6 = new Point(6, 12);
+
+        // create points collection
         $points = new PointsCollection();
-        $points->addPointsArray([$point1, $point2, $point3, $point4, $point5]);
-        $points->addPoint($point6);
+
+        // add points to collection:
+
+        // add single point object
+        $points->addPoint($point1);
+
+        // add array of point objects
+        $points->addPointsArray([$point2, $point3]);
+
+        // add single points coordinates (floats)
+        $points->add($point4->getX(), $point4->getY());
+
+        // add array of arrays
+        $points->addArray([[$point5->getX(), $point5->getY()], [$point6->getX(), $point6->getY()]]);
+
+        // calculate trend line
         $calculator = new Calculator();
         $line = $calculator->calculateLine($points);
+
+        // check its coefficients
         $this->assertLessThan(0.0001, abs(2.0857 - $line->getA()));
         $this->assertLessThan(0.0001, abs(-0.46667 - $line->getB()));
     }

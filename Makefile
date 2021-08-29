@@ -1,6 +1,6 @@
 help:
-	@echo "build     Builds environment"
-	@echo "unit-test Run unit tests on test container"
+	@echo "build-env     Builds environment"
+	@echo "run-unit-test Run unit tests on test container"
 
 build-env:
 	@echo "Building environment"

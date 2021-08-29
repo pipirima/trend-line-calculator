@@ -25,6 +25,11 @@ class Line
 
     public function getY(float $x): float
     {
+        return $this($x);
+    }
+
+    public function __invoke(float $x): float
+    {
         return $this->a * $x + $this->b;
     }
 }
