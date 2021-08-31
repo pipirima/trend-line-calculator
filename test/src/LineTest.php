@@ -14,8 +14,9 @@ class LineTest extends TestCase
         $line = new Line($a, $b);
         $this->assertEquals($a, $line->getA());
         $this->assertEquals($b, $line->getB());
-        $x = 8;
-        $y = $a * $x + $b;
-        $this->assertEquals($y, $line->getY($x));
+        $x = [8, 12];
+        $expected_y = [121, 173];
+        $this->assertEquals(121, $line->getY(8));
+        $this->assertEquals($expected_y, array_map($line, $x));
     }
 }
