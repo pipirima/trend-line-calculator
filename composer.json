@@ -11,7 +11,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Pipirima\\TrendLine\\Test\\": "test/src/"
+      "Pipirima\\TrendLine\\Test\\": "tests/src/"
     }
   },
   "require-dev": {

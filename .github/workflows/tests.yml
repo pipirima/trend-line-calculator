@@ -10,4 +10,4 @@ jobs:
       - name: Build env
         run: make build-env
       - name: Run unit tests
-        run: make run-unit-test
+        run: make run-unit-tests
