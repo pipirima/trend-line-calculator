@@ -16,5 +16,14 @@
   },
   "require-dev": {
     "phpunit/phpunit": "*"
+  },
+
+  "scripts": {
+    "build-env": "composer install",
+    "run-unit-tests": "XDEBUG_MODE=coverage ./vendor/bin/phpunit --verbose --coverage-clover phpunit_build/logs/clover.xml"
+  },
+  "scripts-descriptions": {
+    "build-env": "Builds environment",
+    "run-unit-tests": "Runs unit tests"
   }
 }

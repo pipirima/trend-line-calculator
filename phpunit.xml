@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit colors="true" bootstrap="./vendor/autoload.php">
-    <testsuites>
-        <testsuite name="all">
-            <directory>./tests</directory>
-        </testsuite>
-    </testsuites>
-
-    <filter>
-        <whitelist>
-            <directory suffix=".php">src/</directory>
-        </whitelist>
-    </filter>
-
-    <logging>
-        <log type="junit" target="phpunit_build/report.junit.xml" />
-        <log type="coverage-text" target="php://stdout" />
-        <log type="coverage-html" target="phpunit_build/coverage" />
-        <log type="coverage-clover" target="phpunit_build/logs/clover.xml" />
-    </logging>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" colors="true" bootstrap="./vendor/autoload.php" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+  <coverage>
+    <include>
+      <directory suffix=".php">src/</directory>
+    </include>
+    <report>
+      <clover outputFile="phpunit_build/logs/clover.xml"/>
+      <html outputDirectory="phpunit_build/coverage"/>
+      <text outputFile="php://stdout"/>
+    </report>
+  </coverage>
+  <testsuites>
+    <testsuite name="all">
+      <directory>./tests</directory>
+    </testsuite>
+  </testsuites>
+  <logging>
+    <junit outputFile="phpunit_build/report.junit.xml"/>
+  </logging>
 </phpunit>
