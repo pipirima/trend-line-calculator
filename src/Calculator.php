@@ -4,19 +4,17 @@ namespace Pipirima\TrendLine;
 
 class Calculator
 {
-    public function calculateLine(PointsCollection $collection): Line
+    public function calculateLine(array $points): array
     {
-        $points = $collection->getPoints();
         $cnt = count($points);
         if (0 === $cnt) {
-            throw new NoDataException();
+            throw new \Exception('No data given');
         }
         $Xavg = 0;
         $Yavg = 0;
-        /** @var Point $point */
         foreach ($points as $point) {
-            $Xavg += $point->getX();
-            $Yavg += $point->getY();
+            $Xavg += $point[0];
+            $Yavg += $point[1];
         }
         $Xavg /= $cnt;
         $Yavg /= $cnt;
@@ -24,19 +22,18 @@ class Calculator
         $mCounter = 0;
         $mDenominator = 0;
 
-        /** @var Point $point */
         foreach ($points as $point) {
-            $mCounter += ($point->getX() - $Xavg) * ($point->getY() - $Yavg);
-            $mDenominator += ($point->getX() - $Xavg) ** 2;
+            $mCounter += ($point[0] - $Xavg) * ($point[1] - $Yavg);
+            $mDenominator += ($point[0] - $Xavg) ** 2;
         }
 
         if (0 == $mDenominator) {
-            return new Line(0, $Yavg);
+            return [0, $Yavg];
         }
 
         $m = $mCounter / $mDenominator;
         $b = $Yavg - $m * $Xavg;
 
-        return new Line($m, $b);
+        return [$m, $b];
     }
 }
